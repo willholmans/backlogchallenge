@@ -18,6 +18,7 @@ class CreateBacklogTable extends Migration {
 			$table->integer('points');
 			$table->integer('priority');
 			$table->longText('title');
+			$table->timestamps();
 		});
 	}
 
@@ -28,7 +29,7 @@ class CreateBacklogTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('backglog');
+		Schema::drop('backlog');
 	}
 
 }
