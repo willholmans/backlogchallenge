@@ -11,4 +11,8 @@
 |
 */
 
-Route::resource('backlog', 'BacklogController');
+Route::get('backlog', 'BacklogController@index');
+Route::get('backlog/story/{id}', 'BacklogController@show');
+Route::put('backlog/story/{id}', 'BacklogController@update');
+Route::post('backlog', 'BacklogController@store');
+Route::delete('backlog/story/{id}', 'BacklogController@destroy');
