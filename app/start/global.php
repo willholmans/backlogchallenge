@@ -51,6 +51,16 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+App::error(function(ModelNotFoundException $e)
+	{
+		return Response::json(array(
+			'status' => '400',
+			'message' => 'error'
+		), 400);
+
+	});
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
